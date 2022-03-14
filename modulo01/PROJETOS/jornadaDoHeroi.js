@@ -1,4 +1,4 @@
-var prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 console.clear();
 
 const respostas = [];
@@ -26,8 +26,8 @@ console.log();
 console.log(
   'CERTIFIQUE-SE DE ESTAR COM O CONSOLE MAXIMIZADO.\nPARA UMA MELHOR EXPERIÊNCIA REDUZA O ZOOM DO SEU CONSOLE(ctrl + "-").'
 );
-let continuar = prompt('Digite "s" ou "sim" para continuar:').toLowerCase();
-if (continuar == "s" || continuar == "sim" || continuar != -1) {
+let continuar = prompt('DÊ UM ENTER PARA CONTINUAR:').toLowerCase();
+if (continuar != -1) {
   console.clear();
 }
 
@@ -41,7 +41,6 @@ for (let i = 0; i < perguntas.length; i++) {
     respostas[i] != "s" &&
     respostas[i] != "n"
   ) {
-    console.log("resposta inválida");
     console.clear();
     respostas[i] = prompt(perguntas[i]).toLowerCase();
     console.clear();
@@ -93,7 +92,7 @@ switch (contador) {
     }
 
     break;
-  case 2: // AQUI NOSSO HERÓI IGNOURO ELEMENTOS EXTERNOS AO OBJETIVO PRINCIPAL QUE SÃO FUNDAMENTAIS PARA O SUCESSO DA MISSÃO.
+  case 2: // CONTEXTO DA RESPOSTA: AQUI NOSSO HERÓI IGNNOROU ELEMENTOS EXTERNOS AO OBJETIVO PRINCIPAL QUE SÃO FUNDAMENTAIS PARA O SUCESSO DA MISSÃO.
     console.log(
       "Focar totalmente no resultado foi sua ruína. É preciso estar conectado ao que está acontecendo ao seu redor.\nAgora é tarde demais. O desafio agora é explicar seu fracasso para Aziev."
     );
@@ -104,9 +103,10 @@ switch (contador) {
 
   case 4:
     if (branch4a) {
+      // CONTEXTO DA RESPOSTA: O VERDADEIRO VILÃO É ABADON. SO A PEDRA É CAPAZ DE REVELAR SUA LIGAÇÃO COM ZURAN, PARA ISSO PRECISA ENTRAR FURTIVAMENTE NO COVIL SEM QUE ABADON O PERCEBA E SE OCULTE.(A PEDRA SE TORNOU UM ITEM SEM UTILIDADE.)
       console.log(
         "Lariev derrotou Zuran, porém seu ressurgimento ficou sem explicação, será que deveria ter investigado? Bem para que? Tudo parece estar bem agora.\nUma pedra ficou de lembrança da missão."
-      ); // CASO SOMENTE A PERGUNTA 5 SEJA NEGATIVA
+      ); // CASO A PERGUNTA 4 SEJA NEGATIVA - AQUI LARIEV NÃO TEM SEU ESCUDO COM O PODER DA INVISIBILIDADE, MAS ENTRA NO COVIL FURTIVAMENTE POR SUA CONTA E RISCO.
     } else if (branch4b) {
       // CRIAR UMA RAMIFICAÇÃO RANDÔMICA
       let sucess = Math.floor(Math.random() * 2 + 1);
@@ -128,6 +128,6 @@ switch (contador) {
   case 5:
     console.log(
       "Lariev ao entrar de forma oculta(Graças ao seu escudo!) no Covil de Zuran, encontra Abadon, um poderoso feiticeiro do Magistério de Meridium, de boa fama por todos os povos, mas um ser polêmico pelo Conselho. Ele foi o responsável por trazer Zuran do mundo dos mortos, utilizando-o como fantoche para sua vontade. Com o poder da pedra Omni Reveals, Lariev pôde ver a ligação de Zuran e de Abadon, quebrando o enlace e inutilizando Zuran, agora podia lutar destemidamente contra o verdadeiro inimigo, Abadon. Meridium agora prospera e os tempos de aflição ficaram para trás,\nLariev entrou na história, porém, continuou modesto e se aventurando ajudando aqueles que o invocavam."
-    ); // usar um if caso o lariev perda, ele se torna fantoche de abadon
+    ); 
     break;
 }
