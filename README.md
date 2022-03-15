@@ -8,5 +8,5 @@
 * WHILE
 * ARRAYS
 * FUNÇÕES
-* OBjETOS
+* OBJETOS
 
