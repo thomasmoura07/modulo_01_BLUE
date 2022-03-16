@@ -3,7 +3,7 @@ console.clear();
 
 const respostas = [];
 const histBack =
-  "Zuran um poderoso guerreiro que havia sido morto, misteriosamente retorna e inicia uma insaciável busca por poder e conquista das terras e povos de Meridium,\nusando de toda sua força e crueldade para isso.Lariev um jovem paladino é convocado pelo conselho de Aziev, por ser descendente daquele que derrotou Zuran e o\núnico capaz de portar a Espada de Terebro a que tudo perfura. Orientado pelos sábios embarca em sua aventura mais desafiadora, derrotar Zuran e trazer paz e\njustiça por toda Meridium.";
+  "Zuran um poderoso guerreiro que havia sido morto, misteriosamente retorna e inicia uma insaciável busca por poder e conquista das terras e povos de Meridium,\nusando de toda sua força e crueldade para isso. Lariev um jovem paladino é convocado pelo conselho de Aziev, por ser descendente daquele que derrotou Zuran e o\núnico capaz de portar a Espada de Terebro a que tudo perfura. Orientado pelos sábios embarca em sua aventura mais desafiadora, derrotar Zuran e trazer paz e\njustiça por toda Meridium.";
 let perguntas = [
   "1 - Você encontrou a ilha de Terra-mar, achando o Senhor das Armas, para lhe ensinar as técnicas ocultas da Espada de Terebro?(s/n)",
 
@@ -21,15 +21,23 @@ let branch4a = false; // RAMIFICAÇÃO 1: PARA 4 RESPOSTAS POSITIVAS
 let branch4b = false; // RAMIFICAÇÃO 2: PARA 4 RESPOSTAS POSITIVAS
 
 // EXIBR HISTÓRIA E INSTRUÇÕES BÁSICAS
-console.log(histBack);
-console.log();
+
 console.log(
   'CERTIFIQUE-SE DE ESTAR COM O CONSOLE MAXIMIZADO.\nPARA UMA MELHOR EXPERIÊNCIA REDUZA O ZOOM DO SEU CONSOLE(ctrl + "-").'
 );
-let continuar = prompt('DÊ UM ENTER PARA CONTINUAR:').toLowerCase();
-if (continuar != -1) {
-  console.clear();
-}
+console.log(
+  'Todas as perguntas podem ser respondidas com "s" e "sim" para sim e "n" e "nao" para não.'
+);
+console.log();
+console.log("DÊ UM ENTER PARA CONTINUAR:");
+continuar = prompt();
+console.clear();
+
+console.log(histBack);
+console.log();
+console.log("DÊ UM ENTER PARA CONTINUAR:");
+continuar = prompt();
+console.clear();
 
 // PERGUNTAS REALIZADAS DENTRO DE UM LAÇO FOR. E O WHILE USADO PARA VALIDAÇÃO DE ENTRADA.
 for (let i = 0; i < perguntas.length; i++) {
@@ -128,6 +136,9 @@ switch (contador) {
   case 5:
     console.log(
       "Lariev ao entrar de forma oculta(Graças ao seu escudo!) no Covil de Zuran, encontra Abadon, um poderoso feiticeiro do Magistério de Meridium, de boa fama por todos os povos, mas um ser polêmico pelo Conselho. Ele foi o responsável por trazer Zuran do mundo dos mortos, utilizando-o como fantoche para sua vontade. Com o poder da pedra Omni Reveals, Lariev pôde ver a ligação de Zuran e de Abadon, quebrando o enlace e inutilizando Zuran, agora podia lutar destemidamente contra o verdadeiro inimigo, Abadon. Meridium agora prospera e os tempos de aflição ficaram para trás,\nLariev entrou na história, porém, continuou modesto e se aventurando ajudando aqueles que o invocavam."
-    ); 
+    );
     break;
 }
+
+console.log();
+console.log("FIM");
