@@ -90,6 +90,7 @@ switch (contador) {
       "Não seguir o conselho dos sábios e nem sua intuição foi uma péssima ideia."
     );
     if (sucess == 1) {
+      
       console.log(
         "Teve que retornar de maneira vergonhosa para Aziev. Aos trapos e farrapos."
       );

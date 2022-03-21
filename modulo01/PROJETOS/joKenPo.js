@@ -11,14 +11,14 @@ do {
   let player,
     bot,
     rodadasI,
-    scoreP = 0,
-    scoreB = 0,
-    scoreD = 0;
+    scoreP = 0, // Contador de pontos do usuário
+    scoreB = 0, // Contador de pontos do computador
+    scoreD = 0; // Contador de Empates
 
   do {
-    rodadasI = prompt("Quantas rodadas quer jogar?(min: 1; max: 10)");
+    rodadasI = prompt("Quantas rodadas quer jogar?(min: 1; max: 10):");
     console.clear();
-  } while (isNaN(rodadasI) || rodadasI == 0 || rodadasI > 10);
+  } while (isNaN(rodadasI) || rodadasI <= 0 || rodadasI > 10);
 
   // RODADAS: VAI REPETIR O JOGO DE ACORDO COM A VARIÁVEL 'rodadasI' DEFINIDA PELO USURÁRIO.
   for (let i = 1; i <= rodadasI; i++) {
@@ -51,7 +51,7 @@ do {
     bot = Math.floor(Math.random() * 3);
 
     console.log(`Rodada ${i} de ${rodadasI} rodada(s)`);
-
+    // Delimitação de condições caso o usuário vença
     if (
       (gameOption[player] == "papel" && gameOption[bot] == "pedra") ||
       (gameOption[player] == "pedra" && gameOption[bot] == "tesoura") ||
@@ -65,6 +65,7 @@ do {
         `player: ${gameOption[player]}---X--${gameOption[bot]} (CPU)`
       );
       console.log(`Você ganhou`);
+      // Delimitação de condições caso o usuário perda
     } else if (
       (gameOption[player] == "papel" && gameOption[bot] == "tesoura") ||
       (gameOption[player] == "tesoura" && gameOption[bot] == "pedra") ||
@@ -78,6 +79,7 @@ do {
         `player: ${gameOption[player]}---X--${gameOption[bot]} (CPU)`
       );
       console.log(`Você perdeu`);
+      // Delimitação de condições caso haja empate
     } else if (
       (gameOption[player] == "papel" && gameOption[bot] == "papel") ||
       (gameOption[player] == "pedra" && gameOption[bot] == "pedra") ||
@@ -96,6 +98,7 @@ do {
     console.clear();
   }
   console.log();
+  // DETERMINAR O VENCEDOR DO JOGO DE ACORDO COM OS PONTOS ACUMULADOS EM CADA RODADA
   if (scoreP > scoreB) {
     console.log("Você venceu a máquina!");
   } else if (scoreP < scoreB) {
@@ -115,6 +118,9 @@ do {
     continua != "s" &&
     continua != "sim" &&
     continua != "n" &&
-    continua != "nao"
+    continua != "nao"  // A RESTRIÇÃO EM SIM E NÃO FOI REALIZADA AFIM DE EVITAR COMANDOS ACIDENTAIS, UMA VEZ QUE QUALQUER TECLA AUTOMATICAMENTE ENCERRARIA O PROGRAMA SE NÃO HOUVESSE RESTRIÇÃO.
   );
 } while (continua == "sim" || continua == "s");
+
+
+console.log('FIM DE JOGO')
